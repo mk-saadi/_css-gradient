@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=image.png, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amita&family=Prompt&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Prompt", sans-serif;
+        color: whitesmoke;
+        background: #212121;
+        font-size: 1.5rem;
+        overflow-x: hidden;
+        /* hidden otherwise it will have extra border  */
+      }
+      section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 350px;
+        padding: 100px 20vw;
+      }
+      .blue {
+        background: #3c31dd;
+      }
+      .red {
+        background: #dd3f31;
+        margin-bottom: 4%;
+      }
+      .pink {
+        background: #ff0066;
+      }
+      .dark {
+        background: #0f0f10;
+      }
+      .curve {
+        position: absolute;
+        height: 225px;
+        width: 100%;
+        bottom: 0;
+      }
+      .curve::before {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 54.9%;
+        height: 100%;
+        background-color: #212121;
+        transform: translate(85%, 60%);
+      }
+      .curve::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        background-color: #dd3f31;
+        transform: translate(-4%, 40%);
+        z-index: -1;
+      }
+      .bubble::after {
+        content: "";
+        border-top-left-radius: 50% 100%;
+        border-top-right-radius: 50% 100%;
+        position: absolute;
+        bottom: 0;
+        height: 85%;
+        width: 100%;
+        background-color: #0f0f10;
+        z-index: -1;
+      }
+      .wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+
+      .wave svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 224px;
+        transform: rotateY(180deg);
+      }
+
+      .wave .shape-fill {
+        fill: #0f0f10;
+      }
+      .spacer {
+        aspect-ratio: 960/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      .haikei1 {
+        background-image: url(image/haikei1.svg);
+      }
+      .layer2 {
+        background-image: url(image/layer2.svg);
+      }
+      .flip {
+        transform: rotate(180deg);
+      }
+      .blob-motion{
+        position: absolute;
+        transform: translateY(-20%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- section*8>(h1>{nice curves})+p>lorem2 -->
+    <section class="red">
+      <h1>nice curves</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sit
+        maxime repellendus neque perspiciatis corporis quaerat nam blanditiis
+        facere vel!
+      </p>
+      <div class="curve"></div>
+    </section>
+    <section class="bubble">
+      <h1>nice curves</h1>
+      <p>
+        Repellendus, iure! Quia eos ullam laborum tempore dicta beatae, id
+        soluta nemo aliquam nisi eius, error voluptate architecto eum harum.
+      </p>
+    </section>
+    <section class="dark">
+      <h1>nice curves</h1>
+      <p>
+        Corporis eum odit vitae reiciendis aperiam suscipit delectus eos
+        dignissimos ab expedita aspernatur assumenda iure sint quidem excepturi,
+        laudantium officiis?
+      </p>
+    </section>
+    <section class="blue">
+      <h1>nice curves</h1>
+      <p>
+        Quidem nisi inventore commodi, ex aliquid, dolore rem corporis iusto
+        ipsa minima beatae maiores expedita, et id consequatur magni officia!
+      </p>
+      <div class="wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <div class="spacer haikei1"></div>
+    <section>
+      <h1>nice curves</h1>
+      <p>
+        Consequuntur, expedita, mollitia quasi recusandae reprehenderit ullam
+        quis nisi voluptatibus dicta earum quia assumenda. Reprehenderit
+        aspernatur quod iure beatae similique!
+      </p>
+      <svg
+        id="visual"
+        viewBox="0 0 960 300"
+        width="960"
+        height="300"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+      >
+        <g transform="translate(500.6006225661436 157.4865187078969)">
+          <path id="blob1"
+            d="M68.6 -80.9C81.1 -56.1 78.1 -28 73 -5.1C67.9 17.9 60.8 35.8 48.3 58.5C35.8 81.2 17.9 108.6 0 108.6C-17.9 108.6 -35.8 81.2 -60.8 58.5C-85.8 35.8 -117.9 17.9 -118.6 -0.7C-119.3 -19.3 -88.7 -38.7 -63.7 -63.5C-38.7 -88.3 -19.3 -118.7 4.4 -123C28 -127.4 56.1 -105.8 68.6 -80.9"
+            fill="#BB004B"
+          ></path>
+        </g>
+        <g transform="translate(481.63081719632584 144.9602752503398)" style="visibility: hidden;">
+          <path id="blob2"
+            d="M61.9 -63.5C80.4 -43.4 95.7 -21.7 93.7 -2C91.7 17.7 72.4 35.4 53.9 55.7C35.4 76 17.7 99 -8.8 107.9C-35.4 116.7 -70.7 111.4 -86.4 91C-102 70.7 -98 35.4 -90.7 7.3C-83.4 -20.7 -72.8 -41.5 -57.2 -61.7C-41.5 -81.8 -20.7 -101.4 0.5 -101.9C21.7 -102.4 43.4 -83.7 61.9 -63.5"
+            fill="#BB004B"
+          ></path>
+        </g>
+      </svg>
+      <script>
+        const tween = KUTE.fromto(
+          '#blob',
+          { path: '#blob1' },
+          { path: '#blob2' },
+          {repeat: 999, duration: 3000, yoyo: true }
+        )
+        tween.start()
+      </script>
+    </section>
+    <div class="spacer layer2 flip"></div>
+    <section class="pink">
+      <h1>nice curves</h1>
+      <p>
+        Delectus temporibus itaque facere magni ipsum inventore. Libero
+        obcaecati voluptatibus quasi magnam, quas cupiditate. Reiciendis quo
+        porro culpa odit ipsum.
+      </p>
+    </section>
+    <div class="spacer layer2"></div>
+    <section>
+      <h1>nice curves</h1>
+      <p>
+        Iste, quaerat eos facilis tempore ad eveniet, sapiente eius soluta
+        temporibus autem sequi eaque dignissimos totam alias cum libero
+        architecto!
+      </p>
+    </section>
+    <section>
+      <h1>nice curves</h1>
+      <p>
+        Ducimus expedita ullam mollitia tempora animi nesciunt possimus.
+        Praesentium voluptatem illum dolore? Omnis quibusdam ad optio, rerum
+        reiciendis ratione fugiat!
+      </p>
+    </section>
+  </body>
+</html>

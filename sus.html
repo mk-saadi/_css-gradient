@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --gradient: linear-gradient(
+          45deg,
+          #845ec2,
+          #d65db1,
+          #ff6f91,
+          #ff9671,
+          #f9f871
+        );
+      }
+      body {
+        background-image: var(--gradient);        color: var(--gradient);
+        background-size: 350%;
+        animation: background-animation 5s infinite alternate;
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div{
+        background-color: white;
+      }
+      h1 {
+        text-transform: uppercase;
+        font-size: 5rem;
+        background-image: var(--gradient);        color: var(--gradient);
+        font-weight: bold;
+        font-family: fantasy;
+        padding: .01em 2em;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 350%;
+        animation: background-animation 5s infinite alternate;
+        
+      }
+      @keyframes background-animation {
+        0% {
+          background-position: left;
+        }
+        100% {
+          background-position: right;
+        }
+      }
+      /* body{
+        border: 1em solid black;
+        border-radius: 1em;
+        border-image: linear-gradient(
+          #845ec2,
+          #d65db1
+          #ff6f91,
+          #ff9671,
+          #f9f871
+        );
+        animation: background-animation 5s infinite alternate;
+      } */
+    
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>
+         _css
+        <br />
+        _scss
+        <br>
+        _sass
+      </h1>
+    </div>
+  </body>
+</html>
